@@ -14,7 +14,7 @@ const Header: FC = () => {
   );
 
   const logoutClickHandler = () => {
-    dispatch(signOut);
+    dispatch(signOut());
   };
 
   return (
