@@ -1,6 +1,6 @@
 import { FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { BrowserRouter, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import PrivateRoute from "./components/auth/PrivateRoute";
 import PublicRoute from "./components/auth/PublicRoute";
@@ -52,7 +52,7 @@ const App: FC = () => {
     <BrowserRouter>
       <Header />
       <Switch>
-        <PublicRoute exact path="/" component={Homepage} />
+        <Route exact path="/" component={Homepage} />
         <PublicRoute exact path="/signup" component={SignUp} />
         <PublicRoute exact path="/signin" component={SignIn} />
         <PublicRoute exact path="/forgot-password" component={ForgetPassword} />

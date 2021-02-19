@@ -1,10 +1,15 @@
-//types
+//types for auth
 export const SET_USER = "SET_USER";
 export const SIGN_OUT = "SIGN_OUT";
 export const SET_ERROR = "SET_ERROR";
 export const SET_LOADING = "SET_LOADING";
 export const NEED_VERIFICATION = "NEED_VERIFICATION";
 export const SET_SUCCESS = "SET_SUCCESS";
+
+//types for image gallery
+export const GET_IMAGES = "GET_IMAGES";
+export const ADD_IMAGE = "ADD_IMAGE";
+export const DELETE_IMAGE = "DELETE_IMAGE";
 
 //user object type
 export interface User {
@@ -37,7 +42,7 @@ export interface SignInData {
   password: string;
 }
 
-//actions
+//actions for auth
 interface SetUserAction {
   type: typeof SET_USER;
   payload: User;
@@ -73,3 +78,40 @@ export type AuthAction =
   | SetErrorAction
   | NeedVerificationAction
   | SetSuccessAction;
+
+// actions for gallery
+
+export interface GalleryImage {
+  id?: string;
+  imageUrl: string;
+  filePath: string;
+  fileName: string;
+  createdAt: number;
+  uploaderName: string;
+  uploaderId: string;
+}
+
+export interface GalleryState {
+  images: GalleryImage[];
+  imagesLoaded: boolean;
+}
+
+interface AddImageAction {
+  type: typeof ADD_IMAGE;
+  payload: GalleryImage;
+}
+
+interface GetImagesAction {
+  type: typeof GET_IMAGES;
+  payload: GalleryImage[];
+}
+
+interface DeleteImageAction {
+  type: typeof DELETE_IMAGE;
+  payload: GalleryImage;
+}
+
+export type GalleryAction =
+  | AddImageAction
+  | GetImagesAction
+  | DeleteImageAction;

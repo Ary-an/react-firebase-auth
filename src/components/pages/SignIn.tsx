@@ -61,7 +61,7 @@ const SignIn: FC = () => {
           </p>
 
           <Button
-            text={isLoading ? "Loading..." : "Sign ip"}
+            text={isLoading ? "Loading..." : "Sign in"}
             className="is-primary is-fullwidth mt-5"
             disabled={isLoading}
           />

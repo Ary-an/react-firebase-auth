@@ -8,6 +8,7 @@ import Button from "../Ui/Button";
 
 const Header: FC = () => {
   const history = useHistory();
+
   const dispatch = useDispatch();
   const { authenticated } = useSelector<RootState, RootState["auth"]>(
     (state) => state.auth
